@@ -12,7 +12,7 @@ package fi.jyffe.sa.poc.issue_rest_service;
 
 public class Issue {
 	
-    private final String type;
+    private String type;
 
     public Issue(String type) {
         this.type = type;
@@ -20,5 +20,9 @@ public class Issue {
 
     public String getType() {
         return type;
+    }
+    
+    public void setType(String type) {
+    		this.type = type;
     }
 }
