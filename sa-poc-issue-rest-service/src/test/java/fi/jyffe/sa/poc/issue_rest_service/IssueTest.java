@@ -1,21 +1,11 @@
 package fi.jyffe.sa.poc.issue_rest_service;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import static org.junit.Assert.*;
+import org.junit.Test;
 
-public class IssueTest extends TestCase
+public class IssueTest
 {
-    public IssueTest( String testName )
-    {
-        super( testName );
-    }
-
-    public static Test suite()
-    {
-        return new TestSuite( IssueTest.class );
-    }
-
+	@Test
     public void testIssue()
     {
     		Issue sut = new Issue("foo");
