@@ -1,0 +1,10 @@
+version: '3'
+services:
+  sa-poc-chat-service:
+    image: "jyffe/sa-poc-chat-service"
+    ports:
+     - "8090:8090"
+  sa-poc-web-app:
+    image: "jyffe/sa-poc-web-app"
+    ports:
+     - "8080:8080"

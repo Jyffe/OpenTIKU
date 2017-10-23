@@ -36,7 +36,7 @@ $(function() {
     $('#connect,#disconnect,#text').prop('disabled', true);
 
     $('#connect').click(function() {
-	client = Stomp.over(new SockJS('localhost:8080/chat'));
+	client = Stomp.over(new SockJS('localhost:8090/chat'));
 	
 	client.connect({}, function (frame) {
 	    setConnected(true);
