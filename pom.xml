@@ -21,6 +21,7 @@
 	   -->
       <module>sa-poc-event-service</module>
       <module>sa-poc-chat-service</module>
+      <module>sa-poc-web-app</module>
 	</modules>
 	
 	<build>
