@@ -7,7 +7,7 @@ import org.springframework.messaging.handler.annotation.DestinationVariable;
 
 @Controller
 public class ChatController 
-{
+{   
     @MessageMapping("/chat/{topic}")
     @SendTo("/topic/messages")
     public OutputMessage send(@DestinationVariable("topic") String topic,
@@ -15,4 +15,5 @@ public class ChatController
     {
     		return new OutputMessage(message.getFrom(), message.getText(), topic);
     }
+    
 }

@@ -11,7 +11,7 @@
   
  	<parent>
     		<groupId>org.springframework.boot</groupId>
-    		<artifactId>spring-boot-starter-parent</artifactId>
+    		<artifactId>spring-boot-starter-parent</artifactId>    		 
     		<version>1.5.7.RELEASE</version>
     		<relativePath/>
   	</parent>
@@ -69,6 +69,13 @@
       		<artifactId>spring-boot-starter-test</artifactId>
       		<scope>test</scope>
     		</dependency>
+
+		<!-- obs -->    		
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-messaging</artifactId>
+        </dependency>
+
     		
   	</dependencies>
   

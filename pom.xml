@@ -11,6 +11,13 @@
     <name>sa-poc</name>
     <url>https://github.com/Jyffe/sa-poc</url>
 	
+	<parent>
+   		<groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-starter-parent</artifactId>
+    		<version>1.5.7.RELEASE</version>
+    		<relativePath/>
+  	</parent>
+  
 	<modules> 
       <!--
       <module>sa-poc-event-websocket-service</module>

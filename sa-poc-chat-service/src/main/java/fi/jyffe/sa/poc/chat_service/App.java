@@ -8,9 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author Jyrki Rantonen
  * 
  * SA PoC chat microservice
- * 
- * TODO Move the static Web-page stuff elsewhere
- * TODO Build proper JUnit tests
+ *
+ * TODO Add proper unit- and integration tests
  * TODO Add persistence 
  * 
  * 
