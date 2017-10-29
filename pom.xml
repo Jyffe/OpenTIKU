@@ -19,10 +19,6 @@
   	</parent>
   
 	<modules> 
-      <!--
-	  <module>sa-poc-firealarm-integration</module>
-	  <module>sa-poc-kafka-receiver</module>
-	   -->
       <module>sa-poc-event-service</module>
       <module>sa-poc-chat-service</module>
       <module>sa-poc-web-app</module>
