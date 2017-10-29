@@ -20,9 +20,6 @@
   
 	<modules> 
       <!--
-      <module>sa-poc-event-websocket-service</module>
-	  <module>sa-poc-issue-rest-service</module>
-	  <module>sa-poc-chat-service</module>
 	  <module>sa-poc-firealarm-integration</module>
 	  <module>sa-poc-kafka-receiver</module>
 	   -->
