@@ -1,8 +1,8 @@
-package fi.jyffe.sa.poc.issue_rest_service;
+package fi.jyffe.sa.poc.event_service.websocket;
 
 /**
  * 
- * @author rantojyr
+ * @author Jyrki RAntonen
  *
  * Resource representation class for an Issue
  * 
@@ -10,11 +10,11 @@ package fi.jyffe.sa.poc.issue_rest_service;
  * 
  */
 
-public class Issue {
+public class Event {
 	
     private String type;
 
-    public Issue(String type) {
+    public Event(String type) {
         this.type = type;
     }
 
