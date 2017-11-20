@@ -10,6 +10,17 @@ services:
      - "8090:8090"
   sa-poc-event-service:
     image: "jyffe/sa-poc-event-service"
+    depends_on:
+    - "kafka"
     ports:
      - "8088:8088"
-  
+  sa-poc-firealarm-integration:
+    image: "jyffe/sa-poc-firealarm-integration-service"
+  kafka:
+    image: "spotify/kafka"
+    ports:
+    - "2181:2181"
+    - "9092:9092"
+    environment:
+    - ADVERTISED_HOST=kafka
+    - ADVERTISED_PORT=9092

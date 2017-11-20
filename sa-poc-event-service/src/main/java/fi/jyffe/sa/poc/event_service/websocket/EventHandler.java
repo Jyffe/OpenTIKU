@@ -24,6 +24,21 @@ public class EventHandler extends TextWebSocketHandler {
             System.out.println("Don't have open session to send:" + counter);
         }
     }
+    
+ // This will send only to one client(most recently connected)
+    public void messageCallback(String msg) {
+        System.out.println("Trying to send:" + msg);
+        if (session != null && session.isOpen()) {
+            try {
+                System.out.println("Now sending:" + msg);
+                session.sendMessage(new TextMessage("{\"value\": \"" + msg + "\"}"));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            System.out.println("Don't have open session to send:" + msg);
+        }
+    }
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session) {

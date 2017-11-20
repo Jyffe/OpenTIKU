@@ -22,6 +22,7 @@
       <module>sa-poc-event-service</module>
       <module>sa-poc-chat-service</module>
       <module>sa-poc-web-app</module>
+      <module>sa-poc-firealarm-integration</module>
 	</modules>
 	
 	<build>

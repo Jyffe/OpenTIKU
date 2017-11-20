@@ -14,7 +14,7 @@ public class EventService {
     @Autowired
     EventHandler eventHandler;
     
-    @Scheduled(fixedDelay = 1000)
+    //@Scheduled(fixedDelay = 1000)
     public void sendCounterUpdate() {
         eventHandler.counterIncrementedCallback(counter.incrementAndGet());
     }
