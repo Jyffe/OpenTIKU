@@ -16,6 +16,35 @@ import java.util.Map;
 @Configuration
 public class KafkaProducerConfig {
 
+	//@Value("${kafka.bootstrap-servers}")
+	//private String bootstrapServers;
+	@Value(value = "${kafka.bootstrapAddress}")
+    private String bootstrapAddress;
+	
+	@Bean
+	public Map<String, Object> producerConfigs() {
+		Map<String, Object> props = new HashMap<>();
+	    //props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+		props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapAddress);
+	    props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+	    props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
+
+	    return props;
+	}
+	
+	@Bean
+	public ProducerFactory<String, EventMessage> producerFactory() {
+		return new DefaultKafkaProducerFactory<>(producerConfigs());
+	}
+
+	@Bean
+	public KafkaTemplate<String, EventMessage> kafkaTemplate() {
+		return new KafkaTemplate<>(producerFactory());
+	}
+	
+	/*
+	 * This is the old String serializer code
+	 * 
     @Value(value = "${kafka.bootstrapAddress}")
     private String bootstrapAddress;
 
@@ -31,5 +60,6 @@ public class KafkaProducerConfig {
     @Bean
     public KafkaTemplate<String, String> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());
-    } 
+    }
+    */
 }

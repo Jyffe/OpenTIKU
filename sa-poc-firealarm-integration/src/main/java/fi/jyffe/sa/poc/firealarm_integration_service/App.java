@@ -20,14 +20,18 @@ public class App
 
     		final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
 
+    		//EventMessage msg = new EventMessage();
+    		
     		executorService.scheduleAtFixedRate(new Runnable() {
     			
-    			int i = 0;
+    			Integer i = 0;
     			
     			@Override
     	        public void run() {
-    	            
-    	            producer.sendMessage("Alarm "+i++);
+    				
+    				//producer.sendMessage("Alarm "+i++);
+    				producer.send(new EventMessage(i.toString(), "status"));
+    				i++;
     	        }
     	    }, 0, 1, TimeUnit.SECONDS);
     }

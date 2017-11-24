@@ -18,6 +18,39 @@ import org.springframework.kafka.support.serializer.JsonDeserializer;
 @Configuration
 public class KafkaConsumerConfig {
 
+	//@Value("${kafka.bootstrap-servers}")
+	@Value(value = "${kafka.bootstrapAddress}")
+	private String bootstrapServers;
+
+	@Bean
+	  public Map<String, Object> consumerConfigs() {
+	    Map<String, Object> props = new HashMap<>();
+	    props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+	    props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+	    props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
+	    props.put(ConsumerConfig.GROUP_ID_CONFIG, "json");
+
+	    return props;
+	  }
+
+	  @Bean
+	  public ConsumerFactory<String, EventMessage> consumerFactory() {
+	    return new DefaultKafkaConsumerFactory<>(consumerConfigs(), new StringDeserializer(),
+	        new JsonDeserializer<>(EventMessage.class));
+	  }
+
+	  @Bean
+	  public ConcurrentKafkaListenerContainerFactory<String, EventMessage> kafkaListenerContainerFactory() {
+	    ConcurrentKafkaListenerContainerFactory<String, EventMessage> factory =
+	        new ConcurrentKafkaListenerContainerFactory<>();
+	    factory.setConsumerFactory(consumerFactory());
+
+	    return factory;
+	  }
+	  
+	/*
+	 * This is the old String serializer code
+	 * 
     @Value(value = "${kafka.bootstrapAddress}")
     private String bootstrapAddress;
 
@@ -36,4 +69,5 @@ public class KafkaConsumerConfig {
         factory.setConsumerFactory(consumerFactory("foo"));
         return factory;
     }
+    */
 }
