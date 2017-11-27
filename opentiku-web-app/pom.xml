@@ -11,10 +11,10 @@
   </parent>
    
   <groupId>fi.jyffe</groupId>
-  <artifactId>sa-poc-web-app</artifactId>
+  <artifactId>opentiku-web-app</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>sa-poc-web-app</name>
-  <url>https://github.com/Jyffe/sa-po</url>
+  <name>Open TIKU Web App</name>
+  <url>https://github.com/Jyffe/OpenTIKU</url>
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

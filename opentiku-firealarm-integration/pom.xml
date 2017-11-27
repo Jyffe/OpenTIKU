@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
   
   <groupId>fi.jyffe</groupId>
-  <artifactId>sa-poc-firealarm-integration-service</artifactId>
+  <artifactId>opentiku-firealarm-integration-service</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>sa-poc-firealarm-integration-service</name>
+  <name>Open TIKU Firealarm Integration Service</name>
   <description></description>
-  <url>https://github.com/Jyffe/sa-poc</url>
+  <url>https://github.com/Jyffe/OpenTIKU</url>
   
   <parent>
    	<groupId>org.springframework.boot</groupId>

@@ -1,17 +1,17 @@
 version: '3'
 services:
-  sa-poc-web-app:
-    image: "jyffe/sa-poc-web-app"
+  opentiku-web-app:
+    image: "jyffe/opentiku-web-app"
     ports:
      - "8080:8080"
-  sa-poc-event-service:
-    image: "jyffe/sa-poc-event-service"
+  opentiku-event-service:
+    image: "jyffe/opentiku-event-service"
     depends_on:
     - "kafka"
     ports:
      - "8088:8088"
-  sa-poc-firealarm-integration:
-    image: "jyffe/sa-poc-firealarm-integration-service"
+  opentiku-firealarm-integration:
+    image: "jyffe/opentiku-firealarm-integration-service"
   kafka:
     image: "spotify/kafka"
     ports:

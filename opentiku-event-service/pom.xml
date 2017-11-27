@@ -4,9 +4,9 @@
   <modelVersion>4.0.0</modelVersion>
   
   <groupId>fi.jyffe</groupId>
-  <artifactId>sa-poc-event-service</artifactId>
+  <artifactId>opentiku-event-service</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>sa-poc-event-service</name>
+  <name>Open TIKU Event Service</name>
   <url>https://github.com/Jyffe/sa-poc</url>
   
   <parent>
