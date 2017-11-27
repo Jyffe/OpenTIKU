@@ -16,9 +16,9 @@ import org.springframework.kafka.core.KafkaTemplate;
 * TODO: Separate this into a client library?
 * 
 */
-public class KafkaMessageProducer {
+public class KafkaMessageSender {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(KafkaMessageProducer.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(KafkaMessageSender.class);
 	
 	@Value(value = "${message.topic.name}")
 	private String messageTopic;

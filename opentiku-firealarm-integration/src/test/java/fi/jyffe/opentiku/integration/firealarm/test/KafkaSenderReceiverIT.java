@@ -1,6 +1,7 @@
 package fi.jyffe.opentiku.integration.firealarm.test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,17 +19,15 @@ import org.springframework.kafka.test.utils.ContainerTestUtils;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import fi.jyffe.opentiku.integration.firealarm.kafka.KafkaEventMessageDTO;
-import fi.jyffe.opentiku.integration.firealarm.kafka.KafkaMessageProducer;
-import fi.jyffe.opentiku.integration.firealarm.test.IntegrationTest;
-
+import fi.jyffe.opentiku.integration.firealarm.kafka.KafkaMessageSender;
 
 @Category(IntegrationTest.class)
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class AppTestIT {
+public class KafkaSenderReceiverIT {
 
   @Autowired
-  private KafkaMessageProducer producer;
+  private KafkaMessageSender producer;
 
   @Autowired
   private KafkaMessageReceiver consumer;
@@ -55,6 +54,10 @@ public class AppTestIT {
     producer.send(message);
 
     consumer.getLatch().await(10000, TimeUnit.MILLISECONDS);
+    
     assertThat(consumer.getLatch().getCount()).isEqualTo(0);
+    assertEquals("test", consumer.getMessage().getStatus());
+    assertEquals("123", consumer.getMessage().getId());
+    
   }
 }

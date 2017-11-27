@@ -17,14 +17,22 @@ public class KafkaMessageReceiver {
 	
 	private CountDownLatch latch = new CountDownLatch(1);
 	
+	private KafkaEventMessageDTO eventMessage = new KafkaEventMessageDTO();
+	
 	public CountDownLatch getLatch() {
 	    return latch;
-	  }
+	}
+	
+	public KafkaEventMessageDTO getMessage() {
+		return this.eventMessage;
+	}
 	
 	@KafkaListener(topics = "${message.topic.name}")  
+	//public void receive(KafkaEventMessageDTO eventMessage) {
 	public void receive(KafkaEventMessageDTO eventMessage) {
 	    
 		LOGGER.info("received event message='{}'", eventMessage.toString());
+		this.eventMessage = eventMessage;
 		
 		latch.countDown();
 
