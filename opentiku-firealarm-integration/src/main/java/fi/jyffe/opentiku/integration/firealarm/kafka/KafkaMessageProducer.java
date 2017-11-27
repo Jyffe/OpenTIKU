@@ -20,13 +20,13 @@ public class KafkaMessageProducer {
 	private static final Logger LOGGER = LoggerFactory.getLogger(KafkaMessageProducer.class);
 	
 	@Value(value = "${message.topic.name}")
-	private String jsonTopic;
+	private String messageTopic;
 
 	@Autowired
 	private KafkaTemplate<String, KafkaEventMessageDTO> kafkaTemplate;
 
 	public void send(KafkaEventMessageDTO eventMessage) {
-		LOGGER.info("sending car='{}'", eventMessage.toString());
-		kafkaTemplate.send(jsonTopic, eventMessage);
+		LOGGER.info("sending event='{}'", eventMessage.toString());
+		kafkaTemplate.send(messageTopic, eventMessage);
 	}
 }
