@@ -9,8 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
-import fi.jyffe.opentiku.integration.firealarm.kafka.EventMessage;
-import fi.jyffe.opentiku.integration.firealarm.kafka.MessageProducer;
+import fi.jyffe.opentiku.integration.firealarm.kafka.KafkaEventMessageDTO;
+import fi.jyffe.opentiku.integration.firealarm.kafka.KafkaMessageProducer;
 
 /**
  * 
@@ -38,7 +38,7 @@ public class App
     		
     		ConfigurableApplicationContext context = SpringApplication.run(App.class, args);
     		
-    		MessageProducer producer = context.getBean(MessageProducer.class);
+    		KafkaMessageProducer producer = context.getBean(KafkaMessageProducer.class);
     		
     		/* Keep sending the message and increment the id once a second so that we just see something 
     		going through the system...
@@ -50,7 +50,7 @@ public class App
     			@Override
     	        public void run() {
     				
-    				producer.send(new EventMessage(i.toString(), "status"));
+    				producer.send(new KafkaEventMessageDTO(i.toString(), "status"));
     				
     				i++;
     	        }
@@ -58,8 +58,8 @@ public class App
     }
     
     @Bean
-    public MessageProducer messageProducer() {
-        return new MessageProducer();
+    public KafkaMessageProducer messageProducer() {
+        return new KafkaMessageProducer();
     }
 
 }
