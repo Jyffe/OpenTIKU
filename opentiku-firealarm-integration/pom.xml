@@ -8,7 +8,7 @@
   <artifactId>opentiku-firealarm-integration-service</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Open TIKU Firealarm Integration Service</name>
-  <description></description>
+  <description>Example firealarm integration service for the Open TIKU</description>
   <url>https://github.com/Jyffe/OpenTIKU</url>
   
   <parent>
@@ -78,30 +78,32 @@
   
   <build>
     <plugins>
+    
       <!-- spring-boot-maven-plugin -->
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>	
+      
+      <plugin>
+        <groupId>com.spotify</groupId>
+        <artifactId>dockerfile-maven-plugin</artifactId>
+        <version>1.3.4</version>
+        <configuration>
+          <repository>${docker.image.prefix}/${project.artifactId}</repository>
+        	</configuration>
+        	<executions>
+	      <execution>
+		    <id>default</id>
+		    <phase>install</phase>
+		    <goals>
+			  <goal>build</goal>
+			  <!--goal>push</goal to be added later-->
+		    	</goals>
+	      </execution>
+        	</executions>
       </plugin>
-            		
-      		<plugin>
-        			<groupId>com.spotify</groupId>
-        			<artifactId>dockerfile-maven-plugin</artifactId>
-        			<version>1.3.4</version>
-        			<configuration>
-          			<repository>${docker.image.prefix}/${project.artifactId}</repository>
-        			</configuration>
-        			<executions>
-	      			<execution>
-		    				<id>default</id>
-		    				<phase>install</phase>
-		    				<goals>
-			  				<goal>build</goal>
-			  				<!--goal>push</goal to be added later-->
-		    				</goals>
-	      			</execution>
-        			</executions>
-      		</plugin>
+      
     </plugins>
   </build>
   

@@ -8,9 +8,10 @@
     <artifactId>opentiku</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Open TIKU</name>
+    <name>Open TIKU Project</name>
+    <description>Open TIKU - The open source situational awareness software</description>
     <url>https://github.com/Jyffe/OpenTIKU</url>
-	
+    	
 	<parent>
    		<groupId>org.springframework.boot</groupId>
     		<artifactId>spring-boot-starter-parent</artifactId>

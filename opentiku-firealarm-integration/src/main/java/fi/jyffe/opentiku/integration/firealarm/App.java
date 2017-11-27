@@ -1,4 +1,4 @@
-package fi.jyffe.sa.poc.firealarm_integration_service;
+package fi.jyffe.opentiku.integration.firealarm;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -8,6 +8,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+
+import fi.jyffe.opentiku.integration.firealarm.kafka.EventMessage;
+import fi.jyffe.opentiku.integration.firealarm.kafka.MessageProducer;
 
 /**
  * 

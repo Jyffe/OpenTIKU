@@ -1,4 +1,4 @@
-package fi.jyffe.sa.poc.firealarm_integration_service;
+package fi.jyffe.opentiku.integration.firealarm.kafka;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
