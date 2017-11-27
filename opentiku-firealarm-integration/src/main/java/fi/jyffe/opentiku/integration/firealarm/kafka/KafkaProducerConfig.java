@@ -2,6 +2,7 @@ package fi.jyffe.opentiku.integration.firealarm.kafka;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,22 +20,26 @@ import java.util.Map;
 * 
 * Kafka producer configuration
 * 
+* Uses Spring Kafka JsonSerializer (and underlying Jackson ObjectMapper) for converting the EventMessageDTO
+* object to JSON byte[] message over a Kafka topic.
+* 
 */
 @Configuration
 public class KafkaProducerConfig {
 
+	// TODO: Needs to support multiple addresses... bootrstrapAddress -> list of bootstrapServers
 	@Value(value = "${kafka.bootstrapAddress}")
     private String bootstrapAddress;
 	
 	@Bean
 	public Map<String, Object> producerConfigs() {
-		Map<String, Object> props = new HashMap<>();
+		Map<String, Object> properties = new HashMap<>();
 		
-		props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapAddress);
-	    props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
-	    props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
+		properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapAddress);
+	    properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+	    properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
 
-	    return props;
+	    return properties;
 	}
 	
 	@Bean

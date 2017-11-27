@@ -7,7 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>src/main/java/fi/jyffe/opentiku/firealarm_integration_service/App.java</config>
+		<config>java:fi.jyffe.opentiku.integration.firealarm.test.App</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
