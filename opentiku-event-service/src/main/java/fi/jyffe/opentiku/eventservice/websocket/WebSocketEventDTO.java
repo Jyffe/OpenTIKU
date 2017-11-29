@@ -14,6 +14,8 @@ public class WebSocketEventDTO {
 	
     private String type;
 
+    public WebSocketEventDTO() {}
+    
     public WebSocketEventDTO(String type) {
         this.type = type;
     }
