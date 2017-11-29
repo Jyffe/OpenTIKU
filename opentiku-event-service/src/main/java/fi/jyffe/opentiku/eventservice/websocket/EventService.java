@@ -11,12 +11,14 @@ public class EventService {
     private AtomicInteger counter = new AtomicInteger(0);
 
     @Autowired
-    EventHandler eventHandler;
+    WebSocketEventHandler eventHandler;
     
+    /*
     //@Scheduled(fixedDelay = 1000)
     public void sendCounterUpdate() {
         eventHandler.counterIncrementedCallback(counter.incrementAndGet());
     }
+    */
 
     Integer getValue() {
         return counter.get();

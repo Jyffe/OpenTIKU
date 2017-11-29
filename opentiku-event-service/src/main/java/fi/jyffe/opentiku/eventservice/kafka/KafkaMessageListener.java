@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
-import fi.jyffe.opentiku.eventservice.websocket.EventHandler;
+import fi.jyffe.opentiku.eventservice.websocket.WebSocketEventHandler;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +24,7 @@ public class KafkaMessageListener {
 	private static final Logger LOGGER = LoggerFactory.getLogger(KafkaMessageListener.class);
 	
 	@Autowired
-    EventHandler eventHandler;
+    WebSocketEventHandler eventHandler;
 	
 	// TODO: Just little something to send over atm... needs to be changed to something meaningful later on.
 	@KafkaListener(topics = "${message.topic.name}")  
