@@ -2,19 +2,19 @@ package fi.jyffe.opentiku.eventservice.websocket;
 
 /**
  * 
- * @author Jyrki RAntonen
+ * @author Jyrki Rantonen
  *
- * Resource representation class for an Issue
+ * DTO for carrying Event over WebSocket.
  * 
  * TODO: Other mandatory fields than type, e.g. location, relations to other issues, state, ...
  * 
  */
 
-public class Event {
+public class WebSocketEventDTO {
 	
     private String type;
 
-    public Event(String type) {
+    public WebSocketEventDTO(String type) {
         this.type = type;
     }
 

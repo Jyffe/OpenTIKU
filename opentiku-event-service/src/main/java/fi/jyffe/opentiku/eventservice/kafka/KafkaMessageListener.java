@@ -26,6 +26,7 @@ public class KafkaMessageListener {
 	@Autowired
     EventHandler eventHandler;
 	
+	// TODO: Just little something to send over atm... needs to be changed to something meaningful later on.
 	@KafkaListener(topics = "${message.topic.name}")  
 	public void receive(KafkaEventMessageDTO eventMessage) {
 	    LOGGER.info("received event message='{}'", eventMessage.toString());

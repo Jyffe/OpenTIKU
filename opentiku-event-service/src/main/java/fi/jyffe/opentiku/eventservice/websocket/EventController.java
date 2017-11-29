@@ -13,7 +13,7 @@ public class EventController {
 
 	// To-be REST API part of the service...
     @RequestMapping("/subscribe")
-    public Event event(@RequestParam(value="type", defaultValue="No type") String type) {
-        return new Event(type);
+    public WebSocketEventDTO event(@RequestParam(value="type", defaultValue="No type") String type) {
+        return new WebSocketEventDTO(type);
     }
 }
