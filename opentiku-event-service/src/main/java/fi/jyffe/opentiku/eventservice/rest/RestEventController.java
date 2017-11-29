@@ -1,15 +1,20 @@
-package fi.jyffe.opentiku.eventservice.websocket;
+package fi.jyffe.opentiku.eventservice.rest;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-/*
- *  @RestController annotation marks the class as a REST controller where every method returns a domain object instead of a server
- *  side rendered view (as in case of a MVC controller)
+import fi.jyffe.opentiku.eventservice.websocket.WebSocketEventDTO;
+
+/**
+ * 
+ * @author Jyrki Rantonen
+ * 
+ * TOBE REST Controller
+ *
  */
 @RestController
-public class EventController {
+public class RestEventController {
 
 	// To-be REST API part of the service...
     @RequestMapping("/subscribe")
