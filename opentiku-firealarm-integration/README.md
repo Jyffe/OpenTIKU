@@ -1,6 +1,6 @@
-# SA POC Firealarm Integration Service
+# Open TIKU Firealarm Integration Service
 
-Demonstrates how to integrate external subsystems, firealarm subsystem in this case, with the SA POC.
+Demonstrates how to integrate external subsystems, firealarm subsystem in this case, with the Open TIKU.
 
 See [Open TIKU Wiki](https://github.com/Jyffe/OpenTIKU/wiki) for more details.
 

@@ -16,7 +16,7 @@ import fi.jyffe.opentiku.integration.firealarm.kafka.KafkaMessageSender;
  * 
  * @author Jyrki Rantonen
  * 
- * SA PoC Firealarm Integration Microservice
+ * Open TIKU Firealarm Integration Microservice
  * 
  * Proof-of-concept for a open situational awareness software - OpenTIKU
  * 

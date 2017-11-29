@@ -7,7 +7,8 @@
   <artifactId>opentiku-event-service</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>Open TIKU Event Service</name>
-  <url>https://github.com/Jyffe/sa-poc</url>
+  <description>Event service for the Open TIKU</description>
+  <url>https://github.com/Jyffe/OpenTIKU</url>
   
   <parent>
    	<groupId>org.springframework.boot</groupId>
