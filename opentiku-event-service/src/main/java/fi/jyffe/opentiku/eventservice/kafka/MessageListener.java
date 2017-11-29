@@ -20,7 +20,7 @@ public class MessageListener {
 	//@KafkaListener(topics = "${kakfa.topic.json}")
 	//@KafkaListener(topics = "${message.topic.name}", group = "foo", containerFactory = "fooKafkaListenerContainerFactory")
 	@KafkaListener(topics = "${message.topic.name}")  
-	public void receive(EventMessage eventMessage) {
+	public void receive(KafkaEventMessageDTO eventMessage) {
 	    LOGGER.info("received event message='{}'", eventMessage.toString());
 	    eventHandler.messageCallback(eventMessage.getId());
 	  }

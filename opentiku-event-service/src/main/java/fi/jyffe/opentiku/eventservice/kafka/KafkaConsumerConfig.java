@@ -34,14 +34,14 @@ public class KafkaConsumerConfig {
 	  }
 
 	  @Bean
-	  public ConsumerFactory<String, EventMessage> consumerFactory() {
+	  public ConsumerFactory<String, KafkaEventMessageDTO> consumerFactory() {
 	    return new DefaultKafkaConsumerFactory<>(consumerConfigs(), new StringDeserializer(),
-	        new JsonDeserializer<>(EventMessage.class));
+	        new JsonDeserializer<>(KafkaEventMessageDTO.class));
 	  }
 
 	  @Bean
-	  public ConcurrentKafkaListenerContainerFactory<String, EventMessage> kafkaListenerContainerFactory() {
-	    ConcurrentKafkaListenerContainerFactory<String, EventMessage> factory =
+	  public ConcurrentKafkaListenerContainerFactory<String, KafkaEventMessageDTO> kafkaListenerContainerFactory() {
+	    ConcurrentKafkaListenerContainerFactory<String, KafkaEventMessageDTO> factory =
 	        new ConcurrentKafkaListenerContainerFactory<>();
 	    factory.setConsumerFactory(consumerFactory());
 
