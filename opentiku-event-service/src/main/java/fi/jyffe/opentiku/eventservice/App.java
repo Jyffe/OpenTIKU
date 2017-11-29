@@ -1,4 +1,4 @@
-package fi.jyffe.sa.poc.event_service;
+package fi.jyffe.opentiku.eventservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

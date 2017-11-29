@@ -1,4 +1,4 @@
-package fi.jyffe.sa.poc.event_service.websocket;
+package fi.jyffe.opentiku.eventservice.websocket;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

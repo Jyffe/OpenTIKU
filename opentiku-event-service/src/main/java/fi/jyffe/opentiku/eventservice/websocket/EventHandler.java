@@ -1,4 +1,4 @@
-package fi.jyffe.sa.poc.event_service.websocket;
+package fi.jyffe.opentiku.eventservice.websocket;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.TextMessage;
