@@ -1,4 +1,4 @@
-package fi.jyffe.opentiku.integration.firealarm.test;
+package fi.jyffe.opentiku.integration.firealarm;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;

@@ -115,7 +115,7 @@
           </dependency>
         </dependencies>
         <configuration>
-          <groups>fi.jyffe.opentiku.integration.firealarm.test.IntegrationTest</groups>
+          <groups>fi.jyffe.opentiku.integration.firealarm.IntegrationTest</groups>
         </configuration>
         <executions>
           <execution>

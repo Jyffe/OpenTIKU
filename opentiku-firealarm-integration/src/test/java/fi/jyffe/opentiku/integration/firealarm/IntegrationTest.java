@@ -1,4 +1,4 @@
-package fi.jyffe.opentiku.integration.firealarm.test;
+package fi.jyffe.opentiku.integration.firealarm;
 
 /**
  * 

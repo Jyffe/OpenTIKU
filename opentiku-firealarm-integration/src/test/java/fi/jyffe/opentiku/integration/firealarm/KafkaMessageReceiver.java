@@ -1,4 +1,4 @@
-package fi.jyffe.opentiku.integration.firealarm.test;
+package fi.jyffe.opentiku.integration.firealarm;
 
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
