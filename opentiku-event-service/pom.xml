@@ -216,7 +216,7 @@
           	    </dependency>
         	      </dependencies>
         	      <configuration>
-                <groups>fi.jyffe.opentiku.eventservice.kafka.IntegrationTest</groups>
+                <groups>fi.jyffe.opentiku.eventservice.IntegrationTest</groups>
               </configuration>
               <executions>
                 <execution>

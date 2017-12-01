@@ -18,6 +18,8 @@ import org.springframework.kafka.test.rule.KafkaEmbedded;
 import org.springframework.kafka.test.utils.ContainerTestUtils;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import fi.jyffe.opentiku.eventservice.IntegrationTest;
+
 @Category(IntegrationTest.class)
 @RunWith(SpringRunner.class)
 @SpringBootTest

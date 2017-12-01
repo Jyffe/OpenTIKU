@@ -1,4 +1,4 @@
-package fi.jyffe.opentiku.eventservice.kafka;
+package fi.jyffe.opentiku.eventservice;
 
 /**
  * 
