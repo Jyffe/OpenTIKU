@@ -23,6 +23,7 @@
       <module>opentiku-event-service</module>
       <module>opentiku-web-app</module>
       <module>opentiku-firealarm-integration</module>
+      <module>opentiku-target-service</module>
 	</modules>
 	
 	<build>
