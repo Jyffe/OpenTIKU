@@ -28,7 +28,7 @@ public class KafkaMessageReceiver {
 	@Autowired
     WebSocketEventHandler eventHandler;
 	
-private CountDownLatch latch = new CountDownLatch(1);
+	private CountDownLatch latch = new CountDownLatch(1);
 	
 	private KafkaEventMessageDTO eventMessage = new KafkaEventMessageDTO();
 	

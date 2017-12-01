@@ -8,7 +8,7 @@ import fi.jyffe.opentiku.eventservice.websocket.WebSocketEventDTO;
 
 public class WebSocketEventDTOTest {
 
-	/*
+	/**
 	 * I know, I know... this is NOT a unit test but just something to check out that the separation in between of Unit Tests
 	 * and Integration Tests works right... 
 	 */
