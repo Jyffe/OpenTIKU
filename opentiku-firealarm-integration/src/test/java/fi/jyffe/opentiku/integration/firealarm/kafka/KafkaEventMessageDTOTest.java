@@ -19,10 +19,14 @@ public class KafkaEventMessageDTOTest {
 		
 		sut.setId("123");
 		sut.setStatus("test");
+		sut.setLocation("testlab");
+		sut.setMeasurement("3,14159");
 		
 		assertEquals("123", sut.getId());
 		assertEquals("test", sut.getStatus());
-		assertEquals("EventMessage [id=123, status=test]", sut.toString());
+		assertEquals("testlab", sut.getLocation());
+		assertEquals("3,14159", sut.getMeasurement());
+		assertEquals("EventMessage [id=123, status=test, location=testlab, measurement=3,14159]", sut.toString());
 		
 	}
 

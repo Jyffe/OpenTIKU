@@ -51,7 +51,7 @@ public class KafkaSenderReceiverIT {
 
   @Test
   public void testReceive() throws Exception {
-    KafkaEventMessageDTO message = new KafkaEventMessageDTO("123", "test");
+    KafkaEventMessageDTO message = new KafkaEventMessageDTO("123", "test", "testlab", "3,14159");
     producer.send(message);
 
     consumer.getLatch().await(10000, TimeUnit.MILLISECONDS);
@@ -59,6 +59,9 @@ public class KafkaSenderReceiverIT {
     assertThat(consumer.getLatch().getCount()).isEqualTo(0);
     assertEquals("test", consumer.getMessage().getStatus());
     assertEquals("123", consumer.getMessage().getId());
+    assertEquals("testlab", consumer.getMessage().getLocation());
+	assertEquals("3,14159", consumer.getMessage().getMeasurement());
+	assertEquals("EventMessage [id=123, status=test, location=testlab, measurement=3,14159]", consumer.getMessage().toString());
     
   }
 }
