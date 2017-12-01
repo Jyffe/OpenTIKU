@@ -1,4 +1,4 @@
-package fi.jyffe.opentiku.integration.firealarm;
+package fi.jyffe.opentiku.integration.firealarm.kafka;
 
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
@@ -28,7 +28,6 @@ public class KafkaMessageReceiver {
 	}
 	
 	@KafkaListener(topics = "${message.topic.name}")  
-	//public void receive(KafkaEventMessageDTO eventMessage) {
 	public void receive(KafkaEventMessageDTO eventMessage) {
 	    
 		LOGGER.info("received event message='{}'", eventMessage.toString());

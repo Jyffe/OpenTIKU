@@ -7,7 +7,7 @@ import org.springframework.web.socket.TextMessage;
 import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
-import fi.jyffe.opentiku.eventservice.kafka.KafkaMessageListener;
+import fi.jyffe.opentiku.eventservice.kafka.KafkaMessageReceiver;
 
 /**
 * 
@@ -19,7 +19,7 @@ import fi.jyffe.opentiku.eventservice.kafka.KafkaMessageListener;
 @Component
 public class WebSocketEventHandler extends TextWebSocketHandler {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(KafkaMessageListener.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(KafkaMessageReceiver.class);
 	
     WebSocketSession session;
      

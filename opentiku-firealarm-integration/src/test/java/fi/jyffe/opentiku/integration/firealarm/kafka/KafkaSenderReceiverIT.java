@@ -1,4 +1,4 @@
-package fi.jyffe.opentiku.integration.firealarm;
+package fi.jyffe.opentiku.integration.firealarm.kafka;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;
@@ -18,6 +18,7 @@ import org.springframework.kafka.test.rule.KafkaEmbedded;
 import org.springframework.kafka.test.utils.ContainerTestUtils;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import fi.jyffe.opentiku.integration.firealarm.IntegrationTest;
 import fi.jyffe.opentiku.integration.firealarm.kafka.KafkaEventMessageDTO;
 import fi.jyffe.opentiku.integration.firealarm.kafka.KafkaMessageSender;
 

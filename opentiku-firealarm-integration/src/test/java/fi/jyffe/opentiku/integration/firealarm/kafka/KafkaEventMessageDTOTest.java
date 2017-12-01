@@ -1,4 +1,4 @@
-package fi.jyffe.opentiku.integration.firealarm;
+package fi.jyffe.opentiku.integration.firealarm.kafka;
 
 import static org.junit.Assert.*;
 
