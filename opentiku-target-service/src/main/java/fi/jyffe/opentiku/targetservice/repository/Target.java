@@ -16,6 +16,8 @@ public class Target {
 	
 	private String name;
 	
+	private String state;
+	
 	private String location;
 	
 	public String getId() {
@@ -34,6 +36,14 @@ public class Target {
 		this.name = name;
 	}
 	
+	public String getState() {
+		return state;
+	}
+	
+	public void setState(String state) {
+		this.state = state;
+	}
+	
 	public String getLocation() {
 		return location;
 	}
@@ -44,9 +54,10 @@ public class Target {
 	
 	public Target() {}
 	
-	public Target(String id, String name, String location) {
+	public Target(String id, String name, String state, String location) {
 		this.id = id;
 		this.name = name;
+		this.state = state;
 		this.location = location;
 	}
 

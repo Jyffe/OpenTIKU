@@ -17,15 +17,4 @@ public class App
     {
     		SpringApplication.run(App.class, args);
     }
-    
-    @Bean
-	CommandLineRunner init(TargetRepository targetRepository) {
-    	
-    	return (evt) -> Arrays.asList(
-				"Suupantori,Pirkkala,Kurikka,Haikka,Loukonlahti,Nuolialan koulu,Hannunpolku,Pakkalankulma".split(","))
-				.forEach(
-						a -> {
-							targetRepository.save(new Target(a, "name", "location"));
-						});
-	}
 }
