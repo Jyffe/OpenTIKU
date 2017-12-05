@@ -1,4 +1,4 @@
-package org.opentiku.targetservice;
+package fi.jyffe.opentiku.targetservice.rest;
 
 import java.util.Collection;
 
@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import fi.jyffe.opentiku.targetservice.repository.Target;
+import fi.jyffe.opentiku.targetservice.repository.TargetRepository;
 
 //http://websystique.com/spring-boot/spring-boot-rest-api-example/
 //https://spring.io/guides/tutorials/bookmarks/

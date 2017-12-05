@@ -1,4 +1,4 @@
-package org.opentiku.targetservice;
+package fi.jyffe.opentiku.targetservice.repository;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
