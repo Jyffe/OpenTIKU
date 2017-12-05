@@ -34,7 +34,7 @@ public class TargetRestController {
 	@RequestMapping(method = RequestMethod.GET, value = "/{uuid}") 
 	Collection<Target> readTarget(@PathVariable String uuid) {
 	
-		return this.targetRepository.findByUuid(uuid);
+		return this.targetRepository.findById(uuid);
 		
 	}
 }

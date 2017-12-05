@@ -14,6 +14,8 @@ services:
     image: "jyffe/opentiku-firealarm-integration-service"
   opentiku-target-service:
     image: "jyffe/opentiku-target-service"
+    depends_on:
+    - "kafka"
     ports:
     - "8100:8080"
   kafka:

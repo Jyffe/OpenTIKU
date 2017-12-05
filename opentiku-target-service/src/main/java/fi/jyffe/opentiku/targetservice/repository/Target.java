@@ -12,18 +12,18 @@ public class Target {
     //private Long id;
 	
 	@Id
-	private String uuid;
+	private String id;
 	
 	private String name;
 	
 	private String location;
 	
-	public String getUuid() {
-		return uuid;
+	public String getId() {
+		return id;
 	}
 	
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
+	public void setId(String id) {
+		this.id = id;
 	}
 	
 	public String getName() {
@@ -44,8 +44,8 @@ public class Target {
 	
 	public Target() {}
 	
-	public Target(String targetId, String name, String location) {
-		this.uuid = targetId;
+	public Target(String id, String name, String location) {
+		this.id = id;
 		this.name = name;
 		this.location = location;
 	}
