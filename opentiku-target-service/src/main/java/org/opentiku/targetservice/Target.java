@@ -1,17 +1,36 @@
 package org.opentiku.targetservice;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Target {
 	
-	private String id;
+	@Id
+    @GeneratedValue
+    private Long id;
+	
+	private String uuid;
+	
+	private String name;
 	
 	private String location;
 	
-	public String getId() {
-		return id;
+	public String getUuid() {
+		return uuid;
 	}
 	
-	public void setId(String id) {
-		this.id = id;
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 	public String getLocation() {
@@ -24,8 +43,9 @@ public class Target {
 	
 	public Target() {}
 	
-	public Target(String id, String location) {
-		this.id = id;
+	public Target(String targetId, String name, String location) {
+		this.uuid = targetId;
+		this.name = name;
 		this.location = location;
 	}
 
