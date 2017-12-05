@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 //https://spring.io/guides/tutorials/bookmarks/
 
 @RestController
-@RequestMapping("/v1/target")
+@RequestMapping(value={"/targets", "/v1/targets", "/v1.0/targets"})
 public class TargetRestController {
 
 	private final TargetRepository targetRepository;
@@ -26,5 +26,12 @@ public class TargetRestController {
 	Collection<Target> readTargets() {
 		
 		return this.targetRepository.findAll();
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "/{uuid}") 
+	Collection<Target> readTarget(@PathVariable String uuid) {
+	
+		return this.targetRepository.findByUuid(uuid);
+		
 	}
 }

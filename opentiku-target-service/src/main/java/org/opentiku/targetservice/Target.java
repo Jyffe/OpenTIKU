@@ -7,10 +7,11 @@ import javax.persistence.Id;
 @Entity
 public class Target {
 	
-	@Id
-    @GeneratedValue
-    private Long id;
+	//@Id
+    //@GeneratedValue
+    //private Long id;
 	
+	@Id
 	private String uuid;
 	
 	private String name;
