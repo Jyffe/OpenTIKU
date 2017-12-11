@@ -2,7 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import TargetList from './TargetList.jsx';
 import Form from './Form.jsx';
-import ProductDetail from './ProductDetail.jsx';
+import EventListener from './EventListener.jsx';
 
 class App extends React.Component {
 
@@ -22,7 +22,7 @@ class App extends React.Component {
       <div>
         <Form onSubmit={this.addTargets}/>
         <TargetList targets={this.state.targets}/>
-        <ProductDetail/>
+        <EventListener/>
       </div>
     )
   }
