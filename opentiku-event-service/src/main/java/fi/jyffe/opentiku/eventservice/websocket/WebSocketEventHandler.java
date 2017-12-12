@@ -15,6 +15,8 @@ import fi.jyffe.opentiku.eventservice.kafka.KafkaMessageReceiver;
 * 
 * WebSocket Event Handler
 * 
+* TODO: There MUST be a more elegant way of doing this... right Spring annotations instead of all this stuff...
+* 
 */
 @Component
 public class WebSocketEventHandler extends TextWebSocketHandler {
@@ -32,7 +34,7 @@ public class WebSocketEventHandler extends TextWebSocketHandler {
         if (session != null && session.isOpen()) {
             try {
             	LOGGER.info("sending message='{}'", msg);    
-                session.sendMessage(new TextMessage("{\"value\": \"" + msg + "\"}"));
+                session.sendMessage(new TextMessage(msg));
             } catch (Exception e) {
                 e.printStackTrace();
             }

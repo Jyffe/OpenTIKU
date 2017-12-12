@@ -4,6 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import fi.jyffe.opentiku.eventservice.websocket.WebSocketEventHandler;
 
 import java.util.concurrent.CountDownLatch;
@@ -40,12 +45,14 @@ public class KafkaMessageReceiver {
 		return this.eventMessage;
 	}
 	
-	// TODO: Just little something to send over atm... needs to be changed to something meaningful later on.
 	@KafkaListener(topics = "${message.topic.name}")  
-	public void receive(KafkaEventMessageDTO eventMessage) {
+	public void receive(KafkaEventMessageDTO eventMessage) throws JsonProcessingException {
 	    LOGGER.info("received event message='{}'", eventMessage.toString());
 	    
-	    eventHandler.messageCallback(eventMessage.getId());
+	    // Jackson 2 JSON mapper
+	    final ObjectMapper mapper = new ObjectMapper();
+	    
+	    eventHandler.messageCallback(mapper.writeValueAsString(eventMessage));
 	    
 	    this.eventMessage = eventMessage;
 		

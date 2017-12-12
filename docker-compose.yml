@@ -12,12 +12,14 @@ services:
      - "8088:8088"
   opentiku-firealarm-integration:
     image: "jyffe/opentiku-firealarm-integration-service"
-  opentiku-target-service:
-    image: "jyffe/opentiku-target-service"
-    depends_on:
-    - "kafka"
-    ports:
-    - "8100:8080"
+  # Kafka event.t partitioning needs to be revised before enabling this service, otherwise the topic is owned in random by 
+  # firealarm-integration-service or bu target-service!
+  #opentiku-target-service:
+    #image: "jyffe/opentiku-target-service"
+    #depends_on:
+    #- "kafka"
+    #ports:
+    #- "8100:8080"
   kafka:
     image: "spotify/kafka"
     ports:

@@ -8,6 +8,8 @@ package fi.jyffe.opentiku.eventservice.websocket;
  * 
  * TODO: Other mandatory fields than type, e.g. location, relations to other issues, state, ...
  * 
+ * TODO: Remove this class altogether, as this is redundant?
+ * 
  */
 
 public class WebSocketEventDTO {

@@ -50,7 +50,7 @@ public class App
     			@Override
     	        public void run() {
     				
-    				producer.send(new KafkaEventMessageDTO(i.toString(), "status", null, null));
+    				producer.send(new KafkaEventMessageDTO(i.toString(), "status", "paikka", "mittaus"));
     				
     				i++;
     	        }
